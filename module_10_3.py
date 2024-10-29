@@ -22,7 +22,7 @@ class Bank(threading.Thread):
         for i in range(0, 100):
             if self.lock.locked():
                 self.lock.release()
-            x = randint(50, 5000)
+            x = randint(50, 500)
             print(f'Запрос на {x}')
             if x <= self.balance:
                 self.balance -= x
