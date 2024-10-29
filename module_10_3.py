@@ -16,7 +16,7 @@ class Bank(threading.Thread):
             x = randint(50, 500)
             self.balance += x
             print(f'Пополнение: {x}. Баланс {self.balance} ')
-            time.sleep(0.1)
+            time.sleep(0.001)
 
     def take(self):
         for i in range(0, 100):
@@ -30,7 +30,7 @@ class Bank(threading.Thread):
             else:
                 print('Запрос отклонен, недостаточно средств')
                 self.lock.acquire()
-            time.sleep(0.1)
+            time.sleep(0.001)
 
 
 bk = Bank()
